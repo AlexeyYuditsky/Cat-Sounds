@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatDelegate
+import com.alexeyyuditsky.catsounds.R
 import com.alexeyyuditsky.catsounds.databinding.ActivityMainBinding
 
 const val KEY_THEME_PREFERENCES = "theme"
@@ -20,8 +22,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
 
-
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_activity_main, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setTheme() {

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Кошачьи звуки</string>
+
+    <string name="share">Поделиться приложением</string>
+    <string name="about">О приложении</string>
+    <string name="maximum_volume">Макс громкость</string>
+    <string name="dark_theme">Тёмная тема</string>
+    <string name="favorites">Избранное</string>
+    <string name="add_to_favorites">Добавить в избранное</string>
+    <string name="remove_from_favorites">Удалить из избранного</string>
+</resources>

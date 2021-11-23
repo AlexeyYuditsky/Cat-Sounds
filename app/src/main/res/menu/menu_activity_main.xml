@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_favorites"
+        android:icon="@drawable/favorites"
+        android:title="@string/favorites"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_maximum_volume"
+        android:icon="@drawable/sound"
+        android:title="@string/maximum_volume"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_dark_theme"
+        android:icon="@drawable/moon"
+        android:title="@string/dark_theme"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+</menu>
