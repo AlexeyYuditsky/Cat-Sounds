@@ -8,4 +8,66 @@
     <string name="favorites">Избранное</string>
     <string name="add_to_favorites">Добавить в избранное</string>
     <string name="remove_from_favorites">Удалить из избранного</string>
+
+    <string name="meow">Мяу</string>
+    <string name="angry">Злой</string>
+    <string name="newborn">Котёнок</string>
+
+    <string name="meow1">Мяу 1</string>
+    <string name="meow2">Мяу 2</string>
+    <string name="meow3">Мяу 3</string>
+    <string name="meow4">Мяу 4</string>
+    <string name="meow5">Мяу 5</string>
+    <string name="meow6">Мяу 6</string>
+    <string name="meow7">Мяу 7</string>
+    <string name="meow8">Мяу 8</string>
+    <string name="meow9">Мяу 9</string>
+    <string name="meow10">Мяу 10</string>
+    <string name="meow11">Мяу 11</string>
+    <string name="meow12">Мяу 12</string>
+
+    <string name="angry1">Злой 1</string>
+    <string name="angry2">Злой 2</string>
+    <string name="angry3">Злой 3</string>
+    <string name="angry4">Злой 4</string>
+    <string name="angry5">Злой 5</string>
+    <string name="angry6">Злой 6</string>
+    <string name="angry7">Злой 7</string>
+    <string name="angry8">Злой 8</string>
+    <string name="angry9">Злой 9</string>
+    <string name="angry10">Злой 10</string>
+    <string name="angry11">Злой 11</string>
+    <string name="angry12">Злой 12</string>
+
+    <string name="kitten1">Котёнок 1</string>
+    <string name="kitten2">Котёнок 2</string>
+    <string name="kitten3">Котёнок 3</string>
+    <string name="kitten4">Котёнок 4</string>
+    <string name="kitten5">Котёнок 5</string>
+    <string name="kitten6">Котёнок 6</string>
+    <string name="kitten7">Котёнок 7</string>
+    <string name="kitten8">Котёнок 8</string>
+    <string name="kitten9">Котёнок 9</string>
+    <string name="kitten10">Котёнок 10</string>
+    <string name="kitten11">Котёнок 11</string>
+    <string name="kitten12">Котёнок 12</string>
+
+    <string name="share_message">Приложение: Кошачьи звуки https://play.google.com/store/apps/details?id=com.alexeyyuditsky.catsounds</string>
+    <string name="share_subject">Приложение: Кошачьи звуки</string>
+
+    <string name="snackbar_done">%s добавлен в избранное</string>
+    <string name="snackbar_delete">%s удалён из избранного</string>
+    <string name="snackbar_delete_favorites">Вы очистили избранное</string>
+
+    <string name="toast_message">Нажмите ещё раз для выхода</string>
+    <string name="delete_all">Удалить всё</string>
+    <string name="my_dialog_fragment_message">Вы действительно хотите очистить избранное?</string>
+    <string name="information">Информация</string>
+    <string name="app_description">Разыграй своего шерстянного друга</string>
+    <string name="contacts">Контакты</string>
+    <string name="version">версия:&#160;</string>
+    <string name="links">Ссылки</string>
+    <string name="give_us_a_rating">Поставьте нам оценку ;)</string>
+    <string name="no_app_for_open">У вас нет приложения для открытия этой ссылки</string>
+    <string name="rate_app">Оценить приложение</string>
 </resources>
