@@ -8,4 +8,70 @@
     <string name="favorites">Favorites</string>
     <string name="add_to_favorites">Add to favorites</string>
     <string name="remove_from_favorites">Remove from favorites</string>
+
+    <string name="meow">Meow</string>
+    <string name="angry">Angry</string>
+    <string name="newborn">Kitten</string>
+
+    <string name="meow1">Meow 1</string>
+    <string name="meow2">Meow 2</string>
+    <string name="meow3">Meow 3</string>
+    <string name="meow4">Meow 4</string>
+    <string name="meow5">Meow 5</string>
+    <string name="meow6">Meow 6</string>
+    <string name="meow7">Meow 7</string>
+    <string name="meow8">Meow 8</string>
+    <string name="meow9">Meow 9</string>
+    <string name="meow10">Meow 10</string>
+    <string name="meow11">Meow 11</string>
+    <string name="meow12">Meow 12</string>
+
+    <string name="angry1">Angry 1</string>
+    <string name="angry2">Angry 2</string>
+    <string name="angry3">Angry 3</string>
+    <string name="angry4">Angry 4</string>
+    <string name="angry5">Angry 5</string>
+    <string name="angry6">Angry 6</string>
+    <string name="angry7">Angry 7</string>
+    <string name="angry8">Angry 8</string>
+    <string name="angry9">Angry 9</string>
+    <string name="angry10">Angry 10</string>
+    <string name="angry11">Angry 11</string>
+    <string name="angry12">Angry 12</string>
+
+    <string name="kitten1">Kitten 1</string>
+    <string name="kitten2">Kitten 2</string>
+    <string name="kitten3">Kitten 3</string>
+    <string name="kitten4">Kitten 4</string>
+    <string name="kitten5">Kitten 5</string>
+    <string name="kitten6">Kitten 6</string>
+    <string name="kitten7">Kitten 7</string>
+    <string name="kitten8">Kitten 8</string>
+    <string name="kitten9">Kitten 9</string>
+    <string name="kitten10">Kitten 10</string>
+    <string name="kitten11">Kitten 11</string>
+    <string name="kitten12">Kitten 12</string>
+
+    <string name="share_message">App: Cat Sounds https://play.google.com/store/apps/details?id=com.alexeyyuditsky.catsounds</string>
+    <string name="share_subject">App: Cat Sounds</string>
+
+    <string name="snackbar_done">%s added to favorites</string>
+    <string name="snackbar_delete">%s removed from favorites</string>
+    <string name="snackbar_delete_favorites">You have cleared your favorites</string>
+
+    <string name="toast_message">Click again to exit</string>
+    <string name="delete_all">Delete all</string>
+    <string name="my_dialog_fragment_message">Are you sure you want to clear your favorites?</string>
+    <string name="information">Information</string>
+    <string name="app_description">Prank your woolen friend</string>
+    <string name="contacts">Contacts</string>
+    <string name="version">version:&#160;</string>
+    <string name="links">Links</string>
+    <string name="google_play" translatable="false">Google Play</string>
+    <string name="alexey_yuditsky" translatable="false">Alexey Yuditsky</string>
+    <string name="author" translatable="false">VK</string>
+    <string name="give_us_a_rating">Give us a rating ;)</string>
+    <string name="no_app_for_open">You don\'t have an app to open the link</string>
+    <string name="rate_app">Rate app</string>
+
 </resources>
