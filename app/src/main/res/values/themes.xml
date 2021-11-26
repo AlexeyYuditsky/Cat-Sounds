@@ -5,6 +5,9 @@
         <item name="colorPrimary">@color/purple_500</item>
     </style>
 
-
+    <style name="tabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:background">@color/white</item>
+        <item name="tabIndicatorColor">@color/purple_200</item>
+    </style>
 
 </resources>

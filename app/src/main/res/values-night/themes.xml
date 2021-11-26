@@ -5,4 +5,9 @@
         <item name="android:windowBackground">@color/background_nightTheme</item>
     </style>
 
+    <style name="tabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:background">@color/background_nightTheme</item>
+        <item name="tabIndicatorColor">@color/purple_200</item>
+    </style>
+
 </resources>
