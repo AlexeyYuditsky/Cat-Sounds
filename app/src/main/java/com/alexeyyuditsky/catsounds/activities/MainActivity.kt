@@ -1,14 +1,15 @@
-package com.alexeyyuditsky.catsounds.activities.activities
+package com.alexeyyuditsky.catsounds.activities
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
+import android.media.AudioManager
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.alexeyyuditsky.catsounds.R
-import com.alexeyyuditsky.catsounds.activities.adapters.CatFragmentStateAdapter
 import com.alexeyyuditsky.catsounds.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        binding.viewPager2.adapter = CatFragmentStateAdapter(this)
+        //binding.viewPager2.adapter = CatFragmentStateAdapter(this)
         val listNameTabs =
             listOf(getString(R.string.meow), getString(R.string.angry), getString(R.string.newborn))
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
@@ -44,6 +45,32 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            /*R.id.action_favorites -> {
+                actionFavorites(); return true
+            }*/
+            R.id.action_maximum_volume -> {
+                actionMaximumVolume(); return true
+            }
+            R.id.action_dark_theme -> {
+             //   actionDarkTheme(); return true
+            }
+            R.id.action_about -> {
+             //   actionAbout(); return true
+            }
+            /*R.id.action_rate_app -> {
+                rateApp(this); return true
+            }*/
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun actionMaximumVolume() {
+        val audio = getSystemService(AUDIO_SERVICE) as AudioManager
+        audio.setStreamVolume(AudioManager.STREAM_MUSIC, audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 1)
     }
 
     private fun setTheme() {
