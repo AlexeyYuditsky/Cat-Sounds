@@ -1,12 +1,12 @@
 package com.alexeyyuditsky.catsounds.adapters
 
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.alexeyyuditsky.catsounds.data.Cat
 
-/*
-class CatFragmentStateAdapter(fragmentActivity: FragmentActivity) :
+/*class CatFragmentStateAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount() = Cat.listCat().size
 
@@ -16,5 +16,4 @@ class CatFragmentStateAdapter(fragmentActivity: FragmentActivity) :
         }
 
     }
-
 }*/

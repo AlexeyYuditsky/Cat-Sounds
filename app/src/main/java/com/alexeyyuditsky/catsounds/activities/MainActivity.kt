@@ -21,11 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val sharedPreferences: SharedPreferences by lazy { getPreferences(Context.MODE_PRIVATE) }
     private val toast by lazy {
-        Toast.makeText(
-            this,
-            getText(R.string.toast_message),
-            Toast.LENGTH_SHORT
-        )
+        Toast.makeText(this, getText(R.string.toast_message), Toast.LENGTH_SHORT)
     }
     private var backPressedTime: Long = 0
 
@@ -49,17 +45,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            /*R.id.action_favorites -> {
+            R.id.action_favorites -> {
                 actionFavorites(); return true
-            }*/
+            }
             R.id.action_maximum_volume -> {
                 actionMaximumVolume(); return true
             }
             R.id.action_dark_theme -> {
-             //   actionDarkTheme(); return true
+                //   actionDarkTheme(); return true
             }
             R.id.action_about -> {
-             //   actionAbout(); return true
+                //   actionAbout(); return true
             }
             /*R.id.action_rate_app -> {
                 rateApp(this); return true
@@ -68,9 +64,18 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun actionFavorites() {
+        startActivity(android.content.Intent(this, FavoritesActivity::class.java))
+        overridePendingTransition(R.anim.left_out_open_activity, R.anim.right_in_open_activity)
+    }
+
     private fun actionMaximumVolume() {
         val audio = getSystemService(AUDIO_SERVICE) as AudioManager
-        audio.setStreamVolume(AudioManager.STREAM_MUSIC, audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 1)
+        audio.setStreamVolume(
+            AudioManager.STREAM_MUSIC,
+            audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+            1
+        )
     }
 
     private fun setTheme() {
