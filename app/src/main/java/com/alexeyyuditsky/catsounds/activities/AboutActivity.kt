@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.alexeyyuditsky.catsounds.BuildConfig
 import com.alexeyyuditsky.catsounds.R
 import com.alexeyyuditsky.catsounds.databinding.ActivityAboutBinding
+import com.alexeyyuditsky.catsounds.util.rateApp
 
 const val LINK_VK = "https://vk.com/alexeyyuditsky"
 const val LINK_DEV = "https://play.google.com/store/apps/dev?id=5412871842907287238"
@@ -27,7 +28,7 @@ class AboutActivity : AppCompatActivity() {
             version.text = getString(R.string.version).plus(BuildConfig.VERSION_NAME)
             llDev.setOnClickListener { followLink(LINK_DEV) }
             llShare.setOnClickListener { share() }
-            llLinks.setOnClickListener { /*rateApp(this@AboutActivity)*/ }
+            llLinks.setOnClickListener { rateApp(this@AboutActivity) }
             llContacts.setOnClickListener { followLink(LINK_VK) }
         }
     }
@@ -53,10 +54,7 @@ class AboutActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> {
                 finish()
-                overridePendingTransition(
-                    R.anim.left_out_close_activity,
-                    R.anim.right_in_close_activity
-                )
+                overridePendingTransition(R.anim.left_out_close_activity, R.anim.right_in_close_activity)
                 return true
             }
         }
