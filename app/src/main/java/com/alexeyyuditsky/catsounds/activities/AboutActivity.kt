@@ -20,6 +20,7 @@ class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAboutBinding.inflate(layoutInflater).also { setContentView(it.root) }
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.apply {

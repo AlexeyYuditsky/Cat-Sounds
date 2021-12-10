@@ -1,7 +1,9 @@
 package com.alexeyyuditsky.catsounds.activities
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.media.AudioManager
 import android.os.Bundle
 import android.view.Menu
@@ -10,7 +12,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.alexeyyuditsky.catsounds.R
+import com.alexeyyuditsky.catsounds.adapters.CatFragmentStateAdapter
 import com.alexeyyuditsky.catsounds.databinding.ActivityMainBinding
+import com.alexeyyuditsky.catsounds.util.rateApp
 import com.google.android.material.tabs.TabLayoutMediator
 
 const val KEY_THEME_PREFERENCES = "theme"
@@ -19,20 +23,26 @@ const val lightTheme = 1
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var backPressedTime: Long = 0
     private val sharedPreferences: SharedPreferences by lazy { getPreferences(Context.MODE_PRIVATE) }
     private val toast by lazy {
-        Toast.makeText(this, getText(R.string.toast_message), Toast.LENGTH_SHORT)
+        Toast.makeText(
+            this,
+            getText(R.string.toast_message),
+            Toast.LENGTH_SHORT
+        )
     }
+    private var backPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        //binding.viewPager2.adapter = CatFragmentStateAdapter(this)
+        binding.viewPager2.adapter = CatFragmentStateAdapter(this)
+
         val listNameTabs =
             listOf(getString(R.string.meow), getString(R.string.angry), getString(R.string.newborn))
+
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
             tab.text = listNameTabs[position]
         }.attach()
@@ -52,20 +62,20 @@ class MainActivity : AppCompatActivity() {
                 actionMaximumVolume(); return true
             }
             R.id.action_dark_theme -> {
-                //   actionDarkTheme(); return true
+                actionDarkTheme(); return true
             }
             R.id.action_about -> {
-                //   actionAbout(); return true
+                actionAbout(); return true
             }
-            /*R.id.action_rate_app -> {
+            R.id.action_rate_app -> {
                 rateApp(this); return true
-            }*/
+            }
         }
         return super.onOptionsItemSelected(item)
     }
 
     private fun actionFavorites() {
-        startActivity(android.content.Intent(this, FavoritesActivity::class.java))
+        startActivity(Intent(this, FavoritesActivity::class.java))
         overridePendingTransition(R.anim.left_out_open_activity, R.anim.right_in_open_activity)
     }
 
@@ -78,11 +88,28 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun setTheme() {
-        if (sharedPreferences.getInt(KEY_THEME_PREFERENCES, 0) == darkTheme)
+    private fun actionDarkTheme() {
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
+            sharedPreferences.edit().putInt(KEY_THEME_PREFERENCES, darkTheme).apply()
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        else if (sharedPreferences.getInt(KEY_THEME_PREFERENCES, 0) == lightTheme)
+        } else {
+            sharedPreferences.edit().putInt(KEY_THEME_PREFERENCES, lightTheme).apply()
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+    }
+
+    private fun actionAbout() {
+        startActivity(Intent(this, AboutActivity::class.java))
+        overridePendingTransition(R.anim.left_out_open_activity, R.anim.right_in_open_activity)
+    }
+
+    private fun setTheme() {
+        if (sharedPreferences.getInt(KEY_THEME_PREFERENCES, 0) == darkTheme) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else if (sharedPreferences.getInt(KEY_THEME_PREFERENCES, 0) == lightTheme) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     override fun onBackPressed() {

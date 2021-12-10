@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.alexeyyuditsky.catsounds.data.Cat
+import com.alexeyyuditsky.catsounds.fragment.CatFragment
+import com.alexeyyuditsky.catsounds.util.KEY_LIST_PREFERENCES
 
-/*class CatFragmentStateAdapter(fragmentActivity: FragmentActivity) :
+class CatFragmentStateAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount() = Cat.listCat().size
 
@@ -16,4 +18,4 @@ import com.alexeyyuditsky.catsounds.data.Cat
         }
 
     }
-}*/
+}
