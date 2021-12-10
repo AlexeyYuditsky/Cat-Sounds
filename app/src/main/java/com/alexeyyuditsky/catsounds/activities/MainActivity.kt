@@ -19,11 +19,11 @@ const val lightTheme = 1
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var backPressedTime: Long = 0
     private val sharedPreferences: SharedPreferences by lazy { getPreferences(Context.MODE_PRIVATE) }
     private val toast by lazy {
         Toast.makeText(this, getText(R.string.toast_message), Toast.LENGTH_SHORT)
     }
-    private var backPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme()
