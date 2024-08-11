@@ -5,12 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    namespace = "com.alexeyyuditsky.catsounds"
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.alexeyyuditsky.catsounds"
-        minSdk 16
-        targetSdk 31
+        minSdk 21
+        targetSdk 35
         versionCode 9
         versionName "2.2"
 
@@ -18,13 +19,24 @@ android {
         resConfigs "en", "ru"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("C:/Users/1/Downloads/newKey.jks")
+            storePassword System.getenv("STORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+            storeType "JKS"
+        }
+    }
+
     buildTypes {
         debug {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -35,12 +47,13 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
 dependencies {
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'com.google.code.gson:gson:2.8.8'
-    implementation 'androidx.preference:preference-ktx:1.1.1'
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation 'androidx.core:core-ktx:1.13.1'
 }

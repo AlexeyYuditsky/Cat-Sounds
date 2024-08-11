@@ -12,7 +12,6 @@ import com.alexeyyuditsky.catsounds.R
 import com.alexeyyuditsky.catsounds.databinding.ActivityAboutBinding
 import com.alexeyyuditsky.catsounds.util.rateApp
 
-const val LINK_VK = "https://vk.com/alexeyyuditsky"
 const val LINK_DEV = "https://play.google.com/store/apps/dev?id=5412871842907287238"
 
 class AboutActivity : AppCompatActivity() {
@@ -26,16 +25,15 @@ class AboutActivity : AppCompatActivity() {
 
         binding.apply {
             version.text = getString(R.string.version).plus(BuildConfig.VERSION_NAME)
-            llDev.setOnClickListener { followLink(LINK_DEV) }
+            llDev.setOnClickListener { followLink() }
             llShare.setOnClickListener { share() }
             llLinks.setOnClickListener { rateApp(this@AboutActivity) }
-            llContacts.setOnClickListener { followLink(LINK_VK) }
         }
     }
 
-    private fun followLink(link: String) {
+    private fun followLink() {
         try {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(LINK_DEV)))
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(this, getString(R.string.no_app_for_open), Toast.LENGTH_SHORT).show()
         }
